@@ -1,6 +1,6 @@
 [![MarkMueller](https://img.shields.io/badge/coverage-100%25-orange.svg)](http://markmueller.com/)
 [![GoDoc](https://godoc.org/github.com/mkmueller/config?status.svg)](https://godoc.org/github.com/mkmueller/config)
-[![GoDoc](https://img.shields.io/badge/example-configuration%20file-orange.svg)](https://godoc.org/github.com/mkmueller/config)
+[![GoDoc](https://img.shields.io/badge/example-configuration%20file-blue.svg)](http://htmlpreview.github.io/?https://github.com/mkmueller/config/blob/master/example-conf.html)
 
 
 # config
