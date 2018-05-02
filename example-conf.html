@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html><head><title> Example Configuration File - Mark K Mueller </title>
+<meta charset="UTF-8">
+<meta name="copyright" content="Mark K Mueller" />
+<style>
+body{font-family:Calibi, Arial, sans-serif}
+pre{font-family:Consolas, monaco, monospace}
+EM,U,I,B{text-decoration:none}
+EM{color:#00c;font-weight:bold}
+U{color:#099;font-weight:bold}
+I{color:#0a0;font-weight:bold}
+B{color:#c00;font-weight:bold}
+p{color:#a0a;font-weight:bold;display:inline;padding:0;margin;0}
+table{border-collapse:collapse}
+td,th{background:#eed; border:solid gray;border-width:1px 1px 1px 1px;padding:.5em 5em .5em .5em }
+th{background:#888; padding:.5em .1em 0 1em;font-weight:bold;color:#ffa}
+h1{padding:0;margin:0}
+</style>
+</head>
+<body>
+<h1>Example Configuration File for Go</h1>
+Mark K Mueller
+<table><tr valign=top><th><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125</pre></th><td><pre style="margin: 0; line-height: 125%">        <u># Allowed assignment operators:  equal, colon, or none at all</u>
+PlainString    <p>They're just robots! It's okay to shoot them!</p>
+
+        <u># Quoted strings retain leading and trailing white space</u>
+QuotedString:  <p>&quot;    We need 10cc of concentrated dark matter or he'll die.    &quot;</p>
+
+        <u># Special characters (tab, linefeed, unicode)</u>
+SpecialChars = <p>&quot;What is my purpose?\nYou pass butter.\t\u263a&quot;</p>
+
+        <u># Indicate a multi-line string using trailing backslashes</u>
+MultiLine = <p>There are pros and cons to every alternate timeline. Fun facts \
+            about this one: It has giant, telpathic spiders, eleven 9-11s, and \
+            the best ice cream in the multiverse!</p>
+
+        <u># Large content using heredoc codes retaining linefeed chars and leading space</u>
+Content = &lt;&lt;__A5A3231B__
+<em>&lt;article&gt;</em>
+    <p>You know the worst part about inventing teleportation?
+    Suddenly, you're able to travel the whole galaxy, and the
+    first thing you learn is, you're the last guy to invent
+    teleportation.</p>
+<em>&lt;/article&gt;</em>
+__A5A3231B__
+
+            <u># All basic numeric types except complex</u>
+Numeric {
+            <u># Signed integers</u>
+    Int8    = <b>127</b>
+    Int16   = <b>32,767</b>                        <u># Comma grouping is allowed</u>
+    Int32   = <b>2,147,483,647</b>
+    Int     = <b>9,223,372,036,854,775,807</b>
+    Int64   = <b>9,223,372,036,854,775,807</b>
+
+            <u># Unsigned integers</u>
+    Uint8   = <b>255</b>
+    Uint16  = <b>65 535</b>                        <u># Space grouping is also allowed</u>
+    Uint32  = <b>4 294 967 295</b>
+    Uint    = <b>18 446 744 073 709 551 615</b>
+    Uint64  = <b>18 446 744 073 709 551 615</b>
+
+            <u># Scientific notation on floating point numbers</u>
+    Float32 = <b>3.40282355e+38</b>
+    Float64 = <b>1.7976931348623157e+308</b>
+}
+
+            <u># Numeric abbreviations</u>
+Abreviations {
+    Ki:     <b>1K</b>
+    Mi:     <b>2,048M</b>
+    Gi:     <b>3G</b>
+    Ti:     <b>1T</b>
+    Pi:     <b>4P</b>
+    Ei:     <b>9E</b>
+    Kf:     <b>2.2K</b>
+    Mf:     <b>2.3M</b>
+    Gf:     <b>2.4G</b>
+    Tf:     <b>3.1T</b>
+    Pf:     <b>4.2P</b>
+    Ef:     <b>5.3E</b>
+}
+
+            <u># Boolean values are not case sensitive</u>
+Bools {
+    Bool1   = <i>True</i>
+    Bool2   = <i>FALSE</i>
+    Bool3   = <i>Yes</i>
+    Bool4   = <i>no</i>
+    Bool5   = <i>ON</i>
+    Bool6   = <i>Off</i>
+    Bool7   = <b>1</b>
+    Bool8   = <b>0</b>
+}
+
+                    <u># Five acceptable date/time formats</u>
+Times {
+    OffsetDateTime  = <b>2017-12-25 08:10:00 -0800</b>
+    DateTime        = <b>2017-12-25 08:10:00</b>
+    DateOnly        = <b>2017-12-25</b>
+    TimeOnly        = <b>08:10:00</b>
+    OffsetTime      = <b>08:10:00 -0800</b>
+}
+
+                <u># Map of strings</u>
+StringMap {
+    Key1:       <p>String1</p>
+    Key2:       <p>String2</p>
+}
+
+                <u># Map of integers</u>
+IntegerMap {
+    Key1:       <b>2147483647</b>
+    Key2:       -<b>2147483648</b>
+}
+
+                <u># Map of structs</u>
+StructMap {
+    Key1: {
+                S: <p>String1</p>
+                I: <b>41</b>
+          }
+    Key2: {
+                S: <p>String2</p>
+                I: <b>42</b>
+          }
+}
+
+TimeMap {
+    Key1:       <b>2017-12-25 08:10:00 -0800</b>
+    Key2:       <b>2017-12-25 08:10:00</b>
+    Key3:       <b>2017-12-25</b>
+    Key4:       <b>08:10:00</b>
+    Key5:       <b>08:10:00 -0800</b>
+}
+
+Nested = {
+  Level1 = {
+    Level2 = {
+      Level3 = {
+        S = <p>You're inside a simulation of a simulation... inside another giant simulation!</p>
+        I = <b>41</b>
+      }
+    }
+  }
+}
+</pre></td></tr></table>
