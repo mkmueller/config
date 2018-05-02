@@ -459,8 +459,7 @@ func iFix(s string) string {
 	if len(s) < 2 {
 		return s
 	}
-	s = strings.Replace(s, ",", "", -1)
-	s = strings.Replace(s, " ", "", -1)
+	s = strings.Replace(s, ",", "", -1)  // remove commas
 	n := len(s) - 1
 	switch s[n] {
 	case 'K':
@@ -488,8 +487,7 @@ func floatFix(s string, b int) (float64, error) {
 	case n == 1:
 		return strconv.ParseFloat(s, b)
 	}
-	s = strings.Replace(s, ",", "", -1)
-	s = strings.Replace(s, " ", "", -1)
+	s = strings.Replace(s, ",", "", -1)  // remove commas
 	n = len(s) - 1
 	c := s[n]
 	if c >= '0' && c <= '9' {

@@ -442,12 +442,12 @@ func TestDecode_NumericGrouping(t *testing.T) {
 	    Int     = 9,223,372,036,854,775,807
 	    Int64   = 9,223,372,036,854,775,807
 	    Uint8   = 255
-	    Uint16  = 65 535
-	    Uint32  = 4 294 967 295
-	    Uint    = 18 446 744 073 709 551 615
-	    Uint64  = 18 446 744 073 709 551 615
-	    Float32 = 3.402 823 55e+38
-	    Float64 = 1.797 693 134 862 315 7e+308
+	    Uint16  = 65,535
+	    Uint32  = 4,294,967,295
+	    Uint    = 18,446,744,073,709,551,615
+	    Uint64  = 18,446,744,073,709,551,615
+	    Float32 = 3.402,823,55e+38
+	    Float64 = 1.797,693,134,862,315,7e+308
 		`
 		var x numStruct
 		err := NewDecoder(&x).DecodeString(cfg)
